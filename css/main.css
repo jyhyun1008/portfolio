@@ -201,6 +201,12 @@ body {
     margin-block-end: 1.6em;
 }
 
+#scrollDown, #scrollUp {
+    background-color: var(--lightaccent);
+    text-align: center;
+    color: white;
+}
+
 #page-content {
     min-height: calc(100dvh - 200px);
     padding: 20px;

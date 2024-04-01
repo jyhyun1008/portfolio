@@ -137,17 +137,41 @@ addEventListener("DOMContentLoaded", (event) => {
     .then((out) => {
         document.querySelector("#page-content").innerHTML += parseMd(out)
     })
+    
+    var scrollDone = false
+    var record = 0
 
     window.addEventListener('wheel',(event) => {
         let wheel = event.wheelDeltaY;
-
         document.querySelector("#text-box").addEventListener("scrollend", (event) => {
+            
             if (page < 4 && wheel < 0 && document.querySelector('#text-box').scrollTop >= ( document.querySelector('#page-content').offsetHeight - document.querySelector('#text-box').offsetHeight )) {
-                localStorage.setItem('scroll', 'down')
-                location.href = './?p='+(page+1)
+                if (scrollDone && new Date() - record > 500) {
+                    localStorage.setItem('scroll', 'down')
+                    location.href = './?p='+(page+1)
+                } else if (!scrollDone) {
+                    scrollDone = true
+                    record = new Date()
+                    document.querySelector('#scrollDown').style = "display: block;"
+                } else {
+                    document.querySelector('#scrollDown').innerText = "Loading Next Page:" + ((new Date-record)/5) + "%"
+                    document.querySelector('#scrollDown').style = "display: block; height:" + ((new Date-record)/5)
+                }
             } else if (page > 0 && wheel > 0 && document.querySelector('#text-box').scrollTop <= 0) {
-                localStorage.setItem('scroll', 'up')
-                location.href = './?p='+(page-1)
+                if (scrollDone && new Date() - record > 500) {
+                    localStorage.setItem('scroll', 'up')
+                    location.href = './?p='+(page-1)
+                } else if (!scrollDone) {
+                    scrollDone = true
+                    record = new Date()
+                    document.querySelector('#scrollUp').style = "display: block;"
+                } else {
+                    document.querySelector('#scrollUp').innerText = "Loading Previous Page:" + ((new Date-record)/5) + "%"
+                    document.querySelector('#scrollUp').style = "display: block; height:" + ((new Date-record)/5)
+                }
+            } else {
+                document.querySelector('#scrollUp').style = "display: none;"
+                document.querySelector('#scrollDown').style = "display: none;"
             }
         })
     })
