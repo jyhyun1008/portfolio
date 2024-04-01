@@ -12,7 +12,7 @@ function parseMd(md){
     md = md.replace(/^\*\s(.+)/gm, '<li class="before">$1</li>');
     
     //ul
-    md = md.replace(/^\s*\n\-\s/gm, '<ul>\n* ');
+    md = md.replace(/^\s*\n\-\s/gm, '<ul>\n- ');
     md = md.replace(/^(\-\s.+)\s*\n([^\-])/gm, '$1\n</ul>\n\n$2');
     md = md.replace(/^\-\s(.+)/gm, '<li class="before">$1</li>');
     
@@ -23,7 +23,7 @@ function parseMd(md){
     
     //blockquote
     md = md.replace(/^\>(.+)/gm, '<blockquote>$1</blockquote>');
-    md = md.replace('</blockquote><blockquote>', '');
+    md = md.replace('</blockquote><blockquote>', '\n');
     md = md.replace('</blockquote>\n<blockquote>', '\n');
 
     //hr
