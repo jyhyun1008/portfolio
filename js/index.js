@@ -124,6 +124,7 @@ if (!page) {
 }
 
 addEventListener("DOMContentLoaded", (event) => {
+    document.querySelector('#text-box').scrollTo(0, 10)
 
     document.querySelector("#nav"+page).style = 'background: linear-gradient(white, white);'
 
