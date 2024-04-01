@@ -22,9 +22,10 @@ function parseMd(md){
     md = md.replace(/^\d\.\s(.+)/gm, '<li>$1</li>');
     
     //blockquote
-    md = md.replace(/^\>(.+)/gm, '<blockquote>$1</blockquote>');
-    md = md.replace('</blockquote><blockquote>', '\n');
-    md = md.replace('</blockquote>\n<blockquote>', '\n');
+    md = md.replace(/^\>\s(.+)/gm, '<blockquote>$1</blockquote>');
+    console.log(md)
+    md = md.replace(/\<\/blockquote\>\<blockquote\>/gm, '\n\n');
+    md = md.replace(/\<\/blockquote>\n<blockquote\>/gm, '\n\n');
 
     //hr
     md = md.replace(/[\-]{3}/g, '</div></div><div class="item_wrap"><div class="line">✿--✿--✿</div><div class="item">');

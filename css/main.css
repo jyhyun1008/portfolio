@@ -258,3 +258,7 @@ blockquote {
     padding: 20px;
     border-radius: 15px;
 }
+
+blockquote p {
+    margin: 0 !important;
+}
