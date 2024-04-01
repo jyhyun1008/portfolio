@@ -124,7 +124,9 @@ if (!page) {
 }
 
 addEventListener("DOMContentLoaded", (event) => {
-    document.querySelector('#text-box').scrollTo(0, 10)
+    if (localStorage.getItem('scroll') == 'up') {
+        document.querySelector('#text-box').scrollTo(0, 100)
+    }
 
     document.querySelector("#nav"+page).style = 'background: linear-gradient(white, white);'
 
@@ -139,8 +141,10 @@ addEventListener("DOMContentLoaded", (event) => {
         let wheel = event.wheelDeltaY;
         document.querySelector("#text-box").addEventListener("scrollend", (event) => {
             if (page < 4 && wheel < 0) {
+                localStorage.setItem('scroll', 'down')
                 location.href = './?p='+(page+1)
             } else if (page > 0 && wheel > 0) {
+                localStorage.setItem('scroll', 'up')
                 location.href = './?p='+(page-1)
             }
         })
