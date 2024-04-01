@@ -139,11 +139,12 @@ addEventListener("DOMContentLoaded", (event) => {
 
     window.addEventListener('wheel',(event) => {
         let wheel = event.wheelDeltaY;
+
         document.querySelector("#text-box").addEventListener("scrollend", (event) => {
-            if (page < 4 && wheel < 0) {
+            if (page < 4 && wheel < 0 && document.querySelector('#text-box').scrollTop >= ( document.querySelector('#page-content').offsetHeight - document.querySelector('#text-box').offsetHeight )) {
                 localStorage.setItem('scroll', 'down')
                 location.href = './?p='+(page+1)
-            } else if (page > 0 && wheel > 0) {
+            } else if (page > 0 && wheel > 0 && document.querySelector('#text-box').scrollTop <= 0) {
                 localStorage.setItem('scroll', 'up')
                 location.href = './?p='+(page-1)
             }
