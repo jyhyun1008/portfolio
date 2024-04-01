@@ -123,15 +123,31 @@ if (!page) {
     page = 0
 }
 
-addEventListener("scrollend", (event) => {
-    location.href = './p='+page
-})
-
 addEventListener("DOMContentLoaded", (event) => {
     var url = "https://raw.githubusercontent.com/jyhyun1008/portfolio/main/md/"+page+'.md'
     fetch(url)
     .then(res => res.text())
     .then((out) => {
-        document.querySelector("#text-box").innerHTML += parseMd(out)
+        document.querySelector("#page-content").innerHTML += parseMd(out)
     })
-});
+
+        
+    window.addEventListener('wheel',(event) => {
+        let wheel = event.wheelDeltaY;
+          
+        if(wheel > 0) {
+            console.log('Up!');
+        } else { // (wheel < 0)
+            console.log('Down!');
+        }
+
+        document.querySelector("#text-box").addEventListener("scrollend", (event) => {
+
+            if (page < 4 && wheel < 0) {
+                location.href = './?p='+(page+1)
+            } else if (page > 0 && wheel > 0) {
+                location.href = './?p='+(page-1)
+            }
+        })
+    })
+})

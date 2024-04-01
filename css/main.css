@@ -70,8 +70,14 @@ body {
 #text-box {
     min-width: 100%;
     min-height: min(450px, calc(100dvh - 300px));
+    max-height: min(450px, calc(100dvh - 300px));
     border-radius: 25px;
     background-color: #ffffff22;
+    overflow-y:scroll;
+}
+
+#page-content {
+    height: calc(100dvh - 200px);
 }
 
 #nav-box {
