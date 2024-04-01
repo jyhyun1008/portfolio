@@ -124,6 +124,9 @@ if (!page) {
 }
 
 addEventListener("DOMContentLoaded", (event) => {
+
+    document.querySelector("#nav"+page).style = 'background: linear-gradient(white, white);'
+
     var url = "https://raw.githubusercontent.com/jyhyun1008/portfolio/main/md/"+page+'.md'
     fetch(url)
     .then(res => res.text())
@@ -131,18 +134,9 @@ addEventListener("DOMContentLoaded", (event) => {
         document.querySelector("#page-content").innerHTML += parseMd(out)
     })
 
-        
     window.addEventListener('wheel',(event) => {
         let wheel = event.wheelDeltaY;
-          
-        if(wheel > 0) {
-            console.log('Up!');
-        } else { // (wheel < 0)
-            console.log('Down!');
-        }
-
         document.querySelector("#text-box").addEventListener("scrollend", (event) => {
-
             if (page < 4 && wheel < 0) {
                 location.href = './?p='+(page+1)
             } else if (page > 0 && wheel > 0) {
