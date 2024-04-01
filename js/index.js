@@ -128,7 +128,7 @@ addEventListener("scrollend", (event) => {
 })
 
 addEventListener("DOMContentLoaded", (event) => {
-    var url = "https://api.github.com/repos/jyhyun1008/portfolio/git/trees/main/md/"+page+'.md'
+    var url = "https://raw.githubusercontent.com/jyhyun1008/portfolio/main/md/"+page+'.md'
     fetch(url)
     .then(res => res.text())
     .then((out) => {
