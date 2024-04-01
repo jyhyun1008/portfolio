@@ -125,7 +125,7 @@ if (!page) {
 
 addEventListener("DOMContentLoaded", (event) => {
     if (localStorage.getItem('scroll') == 'up') {
-        document.querySelector('#text-box').scrollTo(0, 100)
+        document.querySelector('#text-box').scrollTo(0, document.querySelector('#page-content').offsetHeight)
     }
 
     document.querySelector("#nav"+page).style = 'background: linear-gradient(white, white);'
