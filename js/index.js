@@ -137,12 +137,27 @@ if (!article) {
     }
     document.querySelector("#nav"+page).style = 'background: white;'
 
-    if ( page < 4 ) {
+    if ( page < 3 ) {
         var url = "https://raw.githubusercontent.com/jyhyun1008/portfolio/main/md/"+page+'.md'
         fetch(url)
         .then(res => res.text())
         .then((out) => {
             document.querySelector("#page-content").innerHTML += parseMd(out)
+        })
+    } else if (page == 3) {
+        var url = "https://raw.githubusercontent.com/jyhyun1008/portfolio/main/md/"+page+'.md'
+        fetch(url)
+        .then(res => res.text())
+        .then((out) => {
+            document.querySelector("#page-content").innerHTML += "<div class='tag-flex'><div class='tag social'>오픈소스 SNS</div><div class='tag ai'>딥러닝</div><div class='tag game'>Games</div><div class='tag blogging'>특수목적 블로깅</div><div class='tag template'>CSS 템플릿</div><div class='tag others'>기타</div><div>"
+
+            document.querySelector("#page-content").innerHTML += parseMd(out)
+
+            var projects = document.getElementsByClassName("pgroup")
+
+            for (let i=0; i<projects.length; i++) {
+                document.querySelector(".tag."+projects[i].classList[1]).innerHTML += "<div class='pgroup "+projects[i].classList[1]+"'>"+projects[i].innerHTML+"</div>"
+            }
         })
     } else {
         document.querySelector("#page-content").innerHTML += "<div class='postContent'></div>"

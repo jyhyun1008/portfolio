@@ -222,6 +222,21 @@ h1#title {
     padding: 20px;
 }
 
+.tag-flex {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+}
+
+.tag {
+    background: #ff989922;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 20px;
+    max-width: calc(50% - 26px);
+    min-width: calc(50% - 26px);
+}
+
 .pflex {
     display: flex;
     flex-wrap: wrap;
@@ -238,32 +253,36 @@ h1#title {
 }
 
 .pgroup.social {
-    border: 5px solid lightpink;
+    border: 3px solid lightpink;
 }
 
 .pgroup.ai {
-    border: 5px solid orange;
+    border: 3px solid orange;
 }
 
 .pgroup.game {
-    border: 5px solid crimson;
+    border: 3px solid crimson;
 }
 
 .pgroup.blogging {
-    border: 5px solid deepskyblue;
+    border: 3px solid deepskyblue;
 }
 
 .pgroup.template {
-    border: 5px solid forestgreen;
+    border: 3px solid forestgreen;
 }
 
 .pgroup.others {
-    border: 5px solid lightsteelblue;
+    border: 3px solid lightsteelblue;
 }
 
 .pgroup-title {
     text-align: center;
-    border-bottom: 1px solid var(--accent);
+    border-bottom: 1px solid white;
+}
+
+.pgroup-title a {
+    color: white !important;
 }
 
 .post-title a, .p-name {
