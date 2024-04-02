@@ -198,7 +198,7 @@ body {
     min-height: min(450px, calc(100svh - 300px));
     max-height: min(450px, calc(100svh - 300px));
     border-radius: 25px;
-    background: linear-gradient(0deg, transparent 45%, var(--grey) 45%, var(--grey) 46%, transparent 46%, transparent 20%, var(--grey) 20%, var(--grey) 21%,transparent 21%), linear-gradient(90deg, transparent 15%, var(--accent) 15%, var(--accent) calc(15% + 1px), transparent calc(15% + 1px));
+    background: linear-gradient(0deg, transparent 45%, var(--grey) 45%, var(--grey) calc(45% + 1px), transparent 46%, transparent 20%, var(--grey) 20%, var(--grey) calc(20% + 1px),transparent calc(20% + 1px)), linear-gradient(90deg, transparent 15%, var(--accent) 15%, var(--accent) calc(15% + 1px), transparent calc(15% + 1px));
     background-size: 100% 1.6em;
     background-color: white;
     opacity: 1;
