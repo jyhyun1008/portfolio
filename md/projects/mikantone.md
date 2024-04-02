@@ -2,7 +2,7 @@
 
 `2022`
 
-`Node.js` `Vue.js` `Socket.io` `JS` `CSS`
+`python` `tensorflow` `js` `css`
 
 ![cocoartz](./assets/cocoartz.png)
 
