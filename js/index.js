@@ -115,26 +115,50 @@ function getQueryStringObject() {
     return b;
 }
 
-var qs = getQueryStringObject();
-var page = parseInt(qs.p);
+var qs = getQueryStringObject()
+var page = parseInt(qs.p)
+var article = qs.a
 
 if (!page) {
     page = 0
 }
 
 addEventListener("DOMContentLoaded", (event) => {
+
+if (!article) {
     if (localStorage.getItem('scroll') == 'up') {
         document.querySelector('#text-box').scrollTo(0, document.querySelector('#page-content').offsetHeight)
     }
 
     document.querySelector("#nav"+page).style = 'background: white;'
 
-    var url = "https://raw.githubusercontent.com/jyhyun1008/portfolio/main/md/"+page+'.md'
+    if ( page < 4 ) {
+        var url = "https://raw.githubusercontent.com/jyhyun1008/portfolio/main/md/"+page+'.md'
+        fetch(url)
+        .then(res => res.text())
+        .then((out) => {
+            document.querySelector("#page-content").innerHTML += parseMd(out)
+        })
+    } else {
+        document.querySelector("#page-content").innerHTML += "<div class='postContent'></div>"
+        var url = "https://i.peacht.art/devlog?url="
+        fetch(url)
+        .then(res => res.text())
+        .then((out) => {
+            out = out.replace(/href\=\"\/jyhyun1008\//gm, 'href="./?a=')
+            document.querySelector(".postContent").innerHTML = out
+        })
+    }
+} else {
+    
+    document.querySelector("#page-content").innerHTML += "<div class='postContent'></div>"
+    var url = "https://i.peacht.art/devlog?url="+article
     fetch(url)
     .then(res => res.text())
     .then((out) => {
-        document.querySelector("#page-content").innerHTML += parseMd(out)
+        document.querySelector(".postContent").innerHTML = out
     })
+}
     
     // var scrollDone = false
     // var record = 0

@@ -186,14 +186,14 @@ body {
     justify-content: space-between;
 }
 
-#title {
+h1#title {
     margin-top: -10px;
     margin-bottom: 0.3em;
 }
 
 #text-box {
-    overflow-y:scroll;
-    overflow-x:hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     min-width: 100%;
     max-width: 100%;
     min-height: min(450px, calc(100svh - 300px));
@@ -219,8 +219,28 @@ body {
 }
 
 #page-content {
-    min-height: calc(100svh - 200px);
     padding: 20px;
+}
+
+.post-title a, .p-name {
+    font-family: 'MoiraiOne-Regular';;
+    color: var(--bg);
+}
+
+.dt-published {
+    padding: 2px;
+    border-radius: 5px;
+    background-color: #ff989922;
+    color: var(--accent);
+    font-family: "Victor Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+.book {
+    display: none;
 }
 
 #nav-box {
@@ -286,7 +306,7 @@ a:hover .nav-list span {
         text-align: center;
     }
 
-    #title {
+    h1#title {
         margin-top: -5px;
     }
 
