@@ -98,8 +98,6 @@ function parseMd(md){
 
     //code
     md = md.replace(/[\`]{1}([^\`]+)[\`]{1}/g, '<code>$1</code>');
-
-    console.log(md)
     
     //br
     md = md.replace(/\n\n([^\n\n]+)/g, '\n<p>$1</p>');
@@ -152,13 +150,12 @@ if (!article) {
             document.querySelector("#page-content").innerHTML += "<div class='tag-flex'><div class='tag social'>오픈소스 SNS</div><div class='tag ai'>딥러닝</div><div class='tag game'>Games</div><div class='tag blogging'>특수목적 블로깅</div><div class='tag template'>CSS 템플릿</div><div class='tag others'>기타</div><div>"
 
             document.querySelector("#page-content").innerHTML += parseMd(out)
+            // var projects = document.getElementsByClassName("pgroup")
 
-            var projects = document.getElementsByClassName("pgroup")
-
-            for (let i=0; i<projects.length; i++) {
-                var tag = projects[i].classList[1]
-                document.querySelector(".tag."+tag).innerHTML += "<div class='pgroup "+tag+"'>"+projects[i].innerHTML+"</div>"
-            }
+            // for (let i=0; i<projects.length; i++) {
+            //     var tag = projects[i].classList[1]
+            //     document.querySelector(".tag."+tag).innerHTML += "<div class='pgroup "+tag+"'>"+projects[i].innerHTML+"</div>"
+            // }
         })
     } else {
         document.querySelector("#page-content").innerHTML += "<div class='postContent'></div>"
