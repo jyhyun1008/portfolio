@@ -368,6 +368,15 @@ a:hover .nav-list span {
 }
 
 @media (max-width: 1000px) {
+
+    body {
+        text-shadow:
+        0.2px 0.2px,
+        -0.2px 0.2px,
+        -0.2px -0.2px,
+        0.2px -0.2px;
+    }
+
     #wrapper {
         flex-direction: column;
         border-radius: 30px;
