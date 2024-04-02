@@ -499,3 +499,7 @@ a {
     color: var(--accent);
     text-decoration: none;
 }
+
+img {
+    border-radius: 30px;
+}
