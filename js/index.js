@@ -140,7 +140,7 @@ addEventListener("DOMContentLoaded", (event) => {
     var record = 0
 
     window.addEventListener('wheel',(event) => {
-        if (document.querySelector('body').offsetWidth < 1000) {
+        if (document.querySelector('body').offsetWidth >= 1000) {
             let wheel = event.wheelDeltaY;
             document.querySelector("#text-box").addEventListener("scrollend", (event) => {
                 
