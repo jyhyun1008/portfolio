@@ -129,7 +129,6 @@ if (!article) {
     if (localStorage.getItem('scroll') == 'up') {
         document.querySelector('#text-box').scrollTo(0, document.querySelector('#page-content').offsetHeight)
     }
-
     document.querySelector("#nav"+page).style = 'background: white;'
 
     if ( page < 4 ) {
@@ -145,18 +144,27 @@ if (!article) {
         fetch(url)
         .then(res => res.text())
         .then((out) => {
-            out = out.replace(/href\=\"\/jyhyun1008\//gm, 'href="./?a=')
+            out = out.replace(/href\=\"\/jyhyun1008\//gm, 'href="./?a=wf/')
             document.querySelector(".postContent").innerHTML = out
         })
     }
-} else {
-    
+} else if (article.split('/')[0] == 'wf') {
+    document.querySelector("#nav4").style = 'background: white;'
+
     document.querySelector("#page-content").innerHTML += "<div class='postContent'></div>"
-    var url = "https://i.peacht.art/devlog?url="+article
+    var url = "https://i.peacht.art/devlog?url="+article.split('wf/')[1]
     fetch(url)
     .then(res => res.text())
     .then((out) => {
         document.querySelector(".postContent").innerHTML = out
+    })
+} else if (article.split('/')[0] == 'pj') {
+    document.querySelector("#nav3").style = 'background: white;'
+    var url = "https://raw.githubusercontent.com/jyhyun1008/portfolio/main/md/projects/"+article.split('pj/')[1]+'.md'
+    fetch(url)
+    .then(res => res.text())
+    .then((out) => {
+        document.querySelector("#page-content").innerHTML += parseMd(out)
     })
 }
     
