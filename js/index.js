@@ -33,6 +33,7 @@ function parseMd(md){
     md = md.replace(/\n[\#]{5}(.+)/g, '<h5>$1</h5>');
     md = md.replace(/\n[\#]{4}(.+)/g, '<h4>$1</h4>');
     md = md.replace(/\n[\#]{3}(.+)/g, '<h3>$1</h3>');
+    md = md.replace(/\n[\#]{2}(.+)\n([^\-\-\-]+)[\-]{3}/g, '\n<div class="pgroup"><h2 class="pgroup-title">$1</h2><div class="pgroup-content">$2</div></div>');
     md = md.replace(/\n[\#]{2}(.+)/g, '<h2>$1</h2>');
     md = md.replace(/\n[\#]{1}(.+)/g, '</div></div><div class="item_wrap"><div class="item"><h1 class="h1">$1</h1>');
     
