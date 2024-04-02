@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100&family=Victor+Mono:ital,wght@1,100&display=swap');
+
 @font-face {
     font-family: 'GrandifloraOne-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_JAMO@1.0/GrandifloraOne-Regular.woff2') format('woff2');
@@ -25,6 +27,11 @@ body {
     color: var(--bg);
     padding: 0;
     margin: 0;
+}
+
+.hanja {
+    font-family: "IBM Plex Sans JP", sans-serif;
+    font-weight: 100;
 }
 
 #app {
@@ -274,8 +281,13 @@ blockquote p {
 }
 
 code {
-    padding: 3px;
+    padding: 2px;
     border-radius: 5px;
     background-color: #ff989922;
     color: var(--accent);
+    font-family: "Victor Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: italic;
+    font-size: 0.8em;
 }
