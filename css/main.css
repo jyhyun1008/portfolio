@@ -232,33 +232,33 @@ h1#title {
     color: white;
     background: #222238bb;
     border-radius: 100px;
-    width: calc(50% - 40px);
+    width: calc(50% - 45px);
     margin-bottom: 20px;
     padding: 20px 12px;
 }
 
-.pgroup.social .pgrop-title {
-    border:2px solid lightpink;
+.pgroup.social {
+    border: 5px solid lightpink;
 }
 
 .pgroup.ai {
-    border:2px solid orange;
+    border: 5px solid orange;
 }
 
 .pgroup.game {
-    border:2px solid crimson;
+    border: 5px solid crimson;
 }
 
 .pgroup.blogging {
-    border:2px solid deepskyblue;
+    border: 5px solid deepskyblue;
 }
 
 .pgroup.template {
-    border:2px solid forestgreen;
+    border: 5px solid forestgreen;
 }
 
 .pgroup.template {
-    border:2px solid lightsteelblue;
+    border: 5px solid lightsteelblue;
 }
 
 .pgroup-title {
