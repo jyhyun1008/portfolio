@@ -156,7 +156,8 @@ if (!article) {
             var projects = document.getElementsByClassName("pgroup")
 
             for (let i=0; i<projects.length; i++) {
-                document.querySelector(".tag."+projects[i].classList[1]).innerHTML += "<div class='pgroup "+projects[i].classList[1]+"'>"+projects[i].innerHTML+"</div>"
+                var tag = projects[i].classList[1]
+                document.querySelector(".tag."+tag).innerHTML += "<div class='pgroup "+tag+"'>"+projects[i].innerHTML+"</div>"
             }
         })
     } else {
