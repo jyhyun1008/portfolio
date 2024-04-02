@@ -314,6 +314,10 @@ a:hover .nav-list span {
         border-radius: 20px;
     }
 
+    .nav-list .bx {
+        font-size: 1.5em;
+    }
+
     a:hover .nav-list span {
         font-size: 1em;
     }
