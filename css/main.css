@@ -38,7 +38,7 @@ body {
 #app {
     position:fixed;
     width: 100vw;
-    height: 100dvh;
+    height: 100svh;
     margin: 0;
     background: linear-gradient(var(--lightbg), var(--bg));
     font-family: 'GrandifloraOne-Regular';
@@ -179,7 +179,7 @@ body {
 #content-box {
     min-width: min(770px, calc(100vw - 280px));
     max-width: min(770px, calc(100vw - 280px));
-    height: min(600px, calc(100dvh - 150px));
+    height: min(600px, calc(100svh - 150px));
     padding: 50px 20px 50px 50px;
     display: flex;
     flex-direction: column;
@@ -195,8 +195,8 @@ body {
     overflow-y:scroll;
     min-width: 100%;
     max-width: 100%;
-    min-height: min(450px, calc(100dvh - 300px));
-    max-height: min(450px, calc(100dvh - 300px));
+    min-height: min(450px, calc(100svh - 300px));
+    max-height: min(450px, calc(100svh - 300px));
     border-radius: 25px;
     background: linear-gradient(0deg, transparent 45%, var(--grey) 45%, var(--grey) 46%, transparent 46%, transparent 20%, var(--grey) 20%, var(--grey) 21%,transparent 21%), linear-gradient(90deg, transparent 15%, var(--accent) 15%, var(--accent) calc(15% + 1px), transparent calc(15% + 1px));
     background-size: 100% 1.6em;
@@ -218,13 +218,13 @@ body {
 }
 
 #page-content {
-    min-height: calc(100dvh - 200px);
+    min-height: calc(100svh - 200px);
     padding: 20px;
 }
 
 #nav-box {
     min-width: 150px;
-    height: min(700px, calc(100dvh - 50px));
+    height: min(700px, calc(100svh - 50px));
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -276,14 +276,14 @@ body {
         border-radius: 30px;
         justify-content: space-between;
         width: calc(100vw - 30px);
-        height: calc(100vh - 30px);
+        height: calc(100svh - 30px);
     }
 
     #content-box {
         min-width: calc(100vw - 50px);
         max-width: calc(100vw - 50px);
         padding: 10px 10px 0 10px;
-        height: calc(100dvh - 110px);
+        height: calc(100svh - 110px);
     }
 
     #title-box {
@@ -295,9 +295,9 @@ body {
     }
 
     #text-box {
-        margin: 10px 0 0 0; */
-        min-height: calc(100dvh - 290px);
-        max-height: calc(100dvh - 290px);
+        margin: 10px 0 0 0;
+        min-height: calc(100svh - 190px);
+        max-height: calc(100svh - 190px);
     }
 
     #footer-box {
