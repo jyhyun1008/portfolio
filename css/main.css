@@ -338,6 +338,11 @@ ul {
 h1 {
     font-family: 'MoiraiOne-Regular';
     line-height: 1.6em;
+    font-weight: normal;
+}
+
+h2 {
+    font-weight: normal;
 }
 
 h1 span {
