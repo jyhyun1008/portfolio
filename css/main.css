@@ -222,6 +222,56 @@ h1#title {
     padding: 20px;
 }
 
+.pflex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.pgroup {
+    color: white;
+    background: #222238bb;
+    border-radius: 100px;
+    width: calc(50% - 40px);
+    margin-bottom: 20px;
+    padding: 20px 12px;
+}
+
+.pgroup.social .pgrop-title {
+    border-radius: 100px 100px 0 0;
+    background: lightpink;
+}
+
+.pgroup.ai {
+    border-radius: 100px 100px 0 0;
+    background: orange;
+}
+
+.pgroup.game {
+    border-radius: 100px 100px 0 0;
+    background: crimson;
+}
+
+.pgroup.blogging {
+    border-radius: 100px 100px 0 0;
+    background: deepskyblue;
+}
+
+.pgroup.template {
+    border-radius: 100px 100px 0 0;
+    background: forestgreen;
+}
+
+.pgroup.template {
+    border-radius: 100px 100px 0 0;
+    background: lightsteelblue;
+}
+
+.pgroup-title {
+    text-align: center;
+    border-bottom: 1px solid var(--accent);
+}
+
 .post-title a, .p-name {
     font-family: 'MoiraiOne-Regular';;
     color: var(--bg);
@@ -316,6 +366,15 @@ a:hover .nav-list span {
         max-height: calc(100svh - 190px);
     }
 
+    .pgroup {
+        width: 100%;
+        max-width: calc(100vw - 115px);
+    }
+
+    .pgroup-title {
+        font-size: 1.5em;
+    }
+
     #footer-box {
         display: none;
     }
@@ -394,5 +453,6 @@ code {
 }
 
 a {
+    color: var(--accent);
     text-decoration: none;
 }

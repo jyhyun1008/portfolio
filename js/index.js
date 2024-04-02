@@ -6,36 +6,39 @@ function parseMd(md){
   
     //ul
     md = md.replace(/^\s*\n\*\s/gm, '<ul>\n* ');
-    md = md.replace(/^(\*\s.+)\s*\n([^\*])/gm, '$1\n</ul>\n\n$2');
+    md = md.replace(/^(\*\s.+)\s*\n([^\*])/gm, '$1\n</ul>\n$2');
     md = md.replace(/^\*\s(.+)/gm, '<li class="before">$1</li>');
     
     //ul
     md = md.replace(/^\s*\n\-\s/gm, '<ul>\n- ');
-    md = md.replace(/^(\-\s.+)\s*\n([^\-])/gm, '$1\n</ul>\n\n$2');
+    md = md.replace(/^(\-\s.+)\s*\n([^\-])/gm, '$1\n</ul>\n$2');
     md = md.replace(/^\-\s(.+)/gm, '<li class="before">$1</li>');
     
     //ol
     md = md.replace(/^\s*\n\d\.\s/gm, '<ol>\n1. ');
-    md = md.replace(/^(\d\.\s.+)\s*\n([^\d\.])/gm, '$1\n</ol>\n\n$2');
+    md = md.replace(/^(\d\.\s.+)\s*\n([^\d\.])/gm, '$1\n</ol>\n$2');
     md = md.replace(/^\d\.\s(.+)/gm, '<li>$1</li>');
     
     //blockquote
     md = md.replace(/^\>\s(.+)/gm, '<blockquote>$1</blockquote>');
-    console.log(md)
     md = md.replace(/\<\/blockquote\>\<blockquote\>/gm, '\n\n');
     md = md.replace(/\<\/blockquote>\n<blockquote\>/gm, '\n\n');
 
-    //hr
-    md = md.replace(/[\-]{3}/g, '</div></div><div class="item_wrap"><div class="line">✿--✿--✿</div><div class="item">');
+    md = md.replace(/\-\-\-/gm, 'ーーー')
     
     //h
     md = md.replace(/\n[\#]{6}(.+)/g, '<h6>$1</h6>');
     md = md.replace(/\n[\#]{5}(.+)/g, '<h5>$1</h5>');
     md = md.replace(/\n[\#]{4}(.+)/g, '<h4>$1</h4>');
     md = md.replace(/\n[\#]{3}(.+)/g, '<h3>$1</h3>');
-    md = md.replace(/\n[\#]{2}(.+)\n([^\-\-\-]+)[\-]{3}/g, '\n<div class="pgroup"><h2 class="pgroup-title">$1</h2><div class="pgroup-content">$2</div></div>');
+    md = md.replace(/\n[\#]{2}\s([\s\S]+)[ー]{3}/g, '<div class="pflex">\n\#\# $1ーーー</div>');
+    md = md.replace(/\n[\#]{2}(.+)[\:]{2}(.+)\n([^ー]+)[ー]{3}/g, '<div class="pgroup $2"><h2 class="pgroup-title">$1</h2><div class="pgroup-content">$3</div></div>');
+    md = md.replace(/\n[\#]{2}(.+)\n([^ー]+)[ー]{3}/g, '<div class="pgroup"><h2 class="pgroup-title">$1</h2><div class="pgroup-content">$2</div></div>');
     md = md.replace(/\n[\#]{2}(.+)/g, '<h2>$1</h2>');
     md = md.replace(/\n[\#]{1}(.+)/g, '</div></div><div class="item_wrap"><div class="item"><h1 class="h1">$1</h1>');
+
+    //hr
+    md = md.replace(/[ー]{3}/g, '</div></div><div class="item_wrap"><div class="line">✿--✿--✿</div><div class="item">');
     
     //images with links
     md = md.replace(/\!\[([^\]]+)\]\(([^\)]+)\)[\(]{1}([^\)\"]+)(\"(.+)\")?[\)]{1}/g, '<div class="gallery"><a href="$3"><img src="$2" alt="$1" width="100%" /></a></div>');
@@ -96,9 +99,11 @@ function parseMd(md){
     //code
     md = md.replace(/[\`]{1}([^\`]+)[\`]{1}/g, '<code>$1</code>');
 
-    //br
-    md = md.replace(/\n\n/g, '</p><p>');
+    console.log(md)
     
+    //br
+    md = md.replace(/\n\n([^\n\n]+)/g, '\n<p>$1</p>');
+
     return md;
 }
 
