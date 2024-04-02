@@ -238,33 +238,27 @@ h1#title {
 }
 
 .pgroup.social .pgrop-title {
-    border-radius: 100px 100px 0 0;
-    background: lightpink;
+    border:2px solid lightpink;
 }
 
 .pgroup.ai {
-    border-radius: 100px 100px 0 0;
-    background: orange;
+    border:2px solid orange;
 }
 
 .pgroup.game {
-    border-radius: 100px 100px 0 0;
-    background: crimson;
+    border:2px solid crimson;
 }
 
 .pgroup.blogging {
-    border-radius: 100px 100px 0 0;
-    background: deepskyblue;
+    border:2px solid deepskyblue;
 }
 
 .pgroup.template {
-    border-radius: 100px 100px 0 0;
-    background: forestgreen;
+    border:2px solid forestgreen;
 }
 
 .pgroup.template {
-    border-radius: 100px 100px 0 0;
-    background: lightsteelblue;
+    border:2px solid lightsteelblue;
 }
 
 .pgroup-title {
