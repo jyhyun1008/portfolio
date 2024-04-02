@@ -32,6 +32,7 @@ body {
 .hanja {
     font-family: "IBM Plex Sans JP", sans-serif;
     font-weight: 100;
+    font-size: 0.9em;
 }
 
 #app {
@@ -186,7 +187,7 @@ body {
 }
 
 #title {
-    margin-top: 0;
+    margin-top: -10px;
     margin-bottom: 0.3em;
 }
 
@@ -247,7 +248,7 @@ body {
 }
 
 .nav-list:hover {
-    background: linear-gradient(white, white);
+    background: white;
 }
 
 .nav-list a:hover {
@@ -267,6 +268,77 @@ body {
 
 #footer-box {
     color: var(--lightbg);
+}
+
+@media (max-width: 1000px) {
+    #wrapper {
+        flex-direction: column;
+        border-radius: 30px;
+        justify-content: space-between;
+        width: calc(100vw - 30px);
+        height: calc(100vh - 30px);
+    }
+
+    #content-box {
+        min-width: calc(100vw - 50px);
+        max-width: calc(100vw - 50px);
+        padding: 10px 10px 0 10px;
+        height: calc(100dvh - 110px);
+    }
+
+    #title-box {
+        text-align: center;
+    }
+
+    #title {
+        margin-top: -5px;
+    }
+
+    #text-box {
+        margin: 10px 0 0 0; */
+        min-height: calc(100dvh - 290px);
+        max-height: calc(100dvh - 290px);
+    }
+
+    #footer-box {
+        display: none;
+    }
+
+    #nav-box {
+        min-width: calc(100vw - 50px);
+        max-width: calc(100vw - 50px);
+        padding: 10px;
+        max-height: 100px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav-list {
+        width: 50px;
+        height: 50px;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+}
+
+ul { 
+    list-style-type: circle;
+}
+
+h1 {
+    font-family: 'MoiraiOne-Regular';
+    line-height: 1.6em;
+}
+
+h1 span {
+    font-family: 'GrandifloraOne-Regular';
 }
 
 blockquote {
@@ -291,3 +363,4 @@ code {
     font-style: italic;
     font-size: 0.8em;
 }
+

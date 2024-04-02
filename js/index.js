@@ -127,7 +127,7 @@ addEventListener("DOMContentLoaded", (event) => {
         document.querySelector('#text-box').scrollTo(0, document.querySelector('#page-content').offsetHeight)
     }
 
-    document.querySelector("#nav"+page).style = 'background: linear-gradient(white, white);'
+    document.querySelector("#nav"+page).style = 'background: white;'
 
     var url = "https://raw.githubusercontent.com/jyhyun1008/portfolio/main/md/"+page+'.md'
     fetch(url)
@@ -140,31 +140,33 @@ addEventListener("DOMContentLoaded", (event) => {
     var record = 0
 
     window.addEventListener('wheel',(event) => {
-        let wheel = event.wheelDeltaY;
-        document.querySelector("#text-box").addEventListener("scrollend", (event) => {
-            
-            if (page < 4 && wheel < 0 && document.querySelector('#text-box').scrollTop >= ( document.querySelector('#page-content').offsetHeight - document.querySelector('#text-box').offsetHeight )) {
-                if (scrollDone && new Date() - record > 3) {
-                    localStorage.setItem('scroll', 'down')
-                    location.href = './?p='+(page+1)
-                } else if (!scrollDone) {
-                    scrollDone = true
-                    record = new Date()
-                    document.querySelector('#scrollDown').style = "display: block;"
+        if (document.querySelector('body').offsetWidth < 1000) {
+            let wheel = event.wheelDeltaY;
+            document.querySelector("#text-box").addEventListener("scrollend", (event) => {
+                
+                if (page < 4 && wheel < 0 && document.querySelector('#text-box').scrollTop >= ( document.querySelector('#page-content').offsetHeight - document.querySelector('#text-box').offsetHeight )) {
+                    if (scrollDone && new Date() - record > 3) {
+                        localStorage.setItem('scroll', 'down')
+                        location.href = './?p='+(page+1)
+                    } else if (!scrollDone) {
+                        scrollDone = true
+                        record = new Date()
+                        document.querySelector('#scrollDown').style = "display: block;"
+                    }
+                } else if (page > 0 && wheel > 0 && document.querySelector('#text-box').scrollTop <= 0) {
+                    if (scrollDone && new Date() - record > 3) {
+                        localStorage.setItem('scroll', 'up')
+                        location.href = './?p='+(page-1)
+                    } else if (!scrollDone) {
+                        scrollDone = true
+                        record = new Date()
+                        document.querySelector('#scrollUp').style = "display: block;"
+                    }
+                } else {
+                    document.querySelector('#scrollUp').style = "display: none;"
+                    document.querySelector('#scrollDown').style = "display: none;"
                 }
-            } else if (page > 0 && wheel > 0 && document.querySelector('#text-box').scrollTop <= 0) {
-                if (scrollDone && new Date() - record > 3) {
-                    localStorage.setItem('scroll', 'up')
-                    location.href = './?p='+(page-1)
-                } else if (!scrollDone) {
-                    scrollDone = true
-                    record = new Date()
-                    document.querySelector('#scrollUp').style = "display: block;"
-                }
-            } else {
-                document.querySelector('#scrollUp').style = "display: none;"
-                document.querySelector('#scrollDown').style = "display: none;"
-            }
-        })
+            })
+        }
     })
 })
