@@ -222,21 +222,6 @@ h1#title {
     padding: 20px;
 }
 
-.tag-flex {
-    display: flex;
-    overflow-x: auto;
-    gap: 12px;
-}
-
-.tag {
-    background: #ff989922;
-    color: white;
-    padding: 2px 10px;
-    border-radius: 20px;
-    max-width: calc(50% - 26px);
-    min-width: calc(50% - 26px);
-}
-
 .pflex {
     display: flex;
     flex-wrap: wrap;
@@ -252,28 +237,55 @@ h1#title {
     padding: 20px 12px;
 }
 
-.pgroup.social {
-    border: 3px solid lightpink;
+.tag-flex {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    align-items: flex-start;
 }
 
-.pgroup.ai {
-    border: 3px solid orange;
+.tag {
+    padding: 2px 10px;
+    border-radius: 100px;
+    max-width: calc(50% - 35px);
+    min-width: calc(50% - 35px);
 }
 
-.pgroup.game {
-    border: 3px solid crimson;
+.tag .pgroup {
+    width: calc(100% - 24px);
 }
 
-.pgroup.blogging {
-    border: 3px solid deepskyblue;
+.tag h1 {
+    text-align: center;
 }
 
-.pgroup.template {
-    border: 3px solid forestgreen;
+.tag.social {
+    background: lightpink;
 }
 
-.pgroup.others {
-    border: 3px solid lightsteelblue;
+.tag.ai {
+    background: orange;
+}
+
+.tag.game {
+    background: crimson;
+}
+
+.tag.blogging {
+    background: deepskyblue;
+}
+
+.tag.template {
+    background: forestgreen;
+}
+
+.tag.others {
+    background: lightsteelblue;
+}
+
+.tag-title {
+    text-align: center;
+    border-bottom: 1px solid white;
 }
 
 .pgroup-title {
@@ -386,6 +398,18 @@ a:hover .nav-list span {
 
     .pgroup-title {
         font-size: 1.5em;
+    }
+
+    .tag {
+        padding: 2px 10px;
+        border-radius: 100px;
+        max-width: calc(100vw - 115px);
+        min-width: calc(100vw - 115px);
+    }
+
+    .tag .pgroup {
+        max-width: calc(100vw - 139px);
+        min-width: calc(100vw - 139px);
     }
 
     #footer-box {

@@ -147,15 +147,15 @@ if (!article) {
         fetch(url)
         .then(res => res.text())
         .then((out) => {
-            document.querySelector("#page-content").innerHTML += "<div class='tag-flex'><div class='tag social'>오픈소스 SNS</div><div class='tag ai'>딥러닝</div><div class='tag game'>Games</div><div class='tag blogging'>특수목적 블로깅</div><div class='tag template'>CSS 템플릿</div><div class='tag others'>기타</div><div>"
-
             document.querySelector("#page-content").innerHTML += parseMd(out)
-            // var projects = document.getElementsByClassName("pgroup")
+            document.querySelector("#page-content").innerHTML += "<div class='tag-flex'><div class='tag social'><h1>오픈소스 SNS</h1></div><div class='tag ai'><h1>딥러닝</h1></div><div class='tag game'><h1>게임</h1></div><div class='tag blogging'><h1>특수목적 블로깅</h1></div><div class='tag template'><h1>CSS 템플릿</h1></div><div class='tag others'><h1>기타</h1></div><div>"
 
-            // for (let i=0; i<projects.length; i++) {
-            //     var tag = projects[i].classList[1]
-            //     document.querySelector(".tag."+tag).innerHTML += "<div class='pgroup "+tag+"'>"+projects[i].innerHTML+"</div>"
-            // }
+            var projects = Array.from(document.getElementsByClassName("pgroup"))
+            projects.forEach(element => {
+                var tag = element.classList[1]
+                document.querySelector(".tag."+tag).innerHTML += "<div class='pgroup "+tag+"'>"+element.innerHTML+"</div>"
+            });
+            document.querySelector('.pflex').style="display:none;"
         })
     } else {
         document.querySelector("#page-content").innerHTML += "<div class='postContent'></div>"
