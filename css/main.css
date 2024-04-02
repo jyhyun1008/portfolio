@@ -247,23 +247,18 @@ body {
     color: var(--accent);
 }
 
-.nav-list:hover {
+a:hover .nav-list {
     background: white;
 }
 
-.nav-list a:hover {
-    text-decoration: none;
-}
-
-.nav-list a:hover .bx {
+a:hover .nav-list .bx {
     display: none;
 }
 
-.nav-list a:hover span {
+a:hover .nav-list span {
     display: block !important;
     color: var(--accent);
     font-size: 1.6em;
-    text-decoration: none;
 }
 
 #footer-box {
@@ -319,7 +314,7 @@ body {
         border-radius: 20px;
     }
 
-    .nav-list a:hover span {
+    a:hover .nav-list span {
         font-size: 1em;
     }
 
@@ -368,3 +363,6 @@ code {
     font-size: 0.8em;
 }
 
+a {
+    text-decoration: none;
+}
