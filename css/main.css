@@ -270,3 +270,10 @@ blockquote {
 blockquote p {
     margin: 0 !important;
 }
+
+code {
+    padding: 3px;
+    border-radius: 5px;
+    background-color: #ff989922;
+    color: var(--accent);
+}
