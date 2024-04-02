@@ -1,10 +1,10 @@
-# Cocoartz (코코아츠)
+# MIKANTONE (미칸톤)
 
 `2022`
 
 `python` `tensorflow` `js` `css`
 
-![cocoartz](./assets/cocoartz.png)
+![mikantone](./assets/mikantone.png)
 
 > 3D 메타버스 채팅형 하우징 게임
 
