@@ -151,9 +151,6 @@ addEventListener("DOMContentLoaded", (event) => {
                     scrollDone = true
                     record = new Date()
                     document.querySelector('#scrollDown').style = "display: block;"
-                } else {
-                    document.querySelector('#scrollDown').innerText = "Loading Next Page:" + ((new Date-record)/0.03) + "%"
-                    document.querySelector('#scrollDown').style = "display: block; height:" + ((new Date-record)/0.03)
                 }
             } else if (page > 0 && wheel > 0 && document.querySelector('#text-box').scrollTop <= 0) {
                 if (scrollDone && new Date() - record > 3) {
@@ -163,9 +160,6 @@ addEventListener("DOMContentLoaded", (event) => {
                     scrollDone = true
                     record = new Date()
                     document.querySelector('#scrollUp').style = "display: block;"
-                } else {
-                    document.querySelector('#scrollUp').innerText = "Loading Previous Page:" + ((new Date-record)/0.03) + "%"
-                    document.querySelector('#scrollUp').style = "display: block; height:" + ((new Date-record)/0.03)
                 }
             } else {
                 document.querySelector('#scrollUp').style = "display: none;"
