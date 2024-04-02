@@ -21,6 +21,12 @@
     --lightbg: color-mix(in srgb, var(--bg) 60%, grey);
     --darkaccent: color-mix(in srgb, var(--accent) 70%, #b50051);
     --lightaccent: color-mix(in srgb, var(--accent) 60%, #fbffbb);
+    --social: #FFB6C155;
+    --ai: #FFD70055;
+    --game: #DC143C55;
+    --blogging: #87CEFA55;
+    --template: #3CB37155;
+    --others: #B0C4DE55;
 }
 
 body {
@@ -260,27 +266,27 @@ h1#title {
 }
 
 .tag.social {
-    background: lightpink;
+    background: var(--social);
 }
 
 .tag.ai {
-    background: orange;
+    background: var(--ai);
 }
 
 .tag.game {
-    background: crimson;
+    background: var(--game);
 }
 
 .tag.blogging {
-    background: deepskyblue;
+    background: var(--blogging);
 }
 
 .tag.template {
-    background: forestgreen;
+    background: var(--template);
 }
 
 .tag.others {
-    background: lightsteelblue;
+    background: var(--others);
 }
 
 .tag-title {
