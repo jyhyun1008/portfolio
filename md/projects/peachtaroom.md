@@ -4,7 +4,7 @@
 
 `js` `express` `node.js` `socket.io` `aiscript` `piscript`
 
-![peachtaroom](./assets/peachtaroom.png)
+![width: min(100%, 300px)](./assets/peachtaroom.png)
 
 > 미스키 플레이 기반 2D 메타버스 채팅형 하우징 게임
 
