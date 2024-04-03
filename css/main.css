@@ -379,7 +379,7 @@ a:hover .nav-list span {
 
     #wrapper {
         flex-direction: column;
-        border-radius: 100px 100px 50px 50px;
+        border-radius: 100px 100px 30px 30px;
         justify-content: space-between;
         width: calc(100vw - 30px);
         height: calc(100svh - 30px);
@@ -402,7 +402,6 @@ a:hover .nav-list span {
 
     #text-box {
         margin: 10px 0 0 0;
-        border-radius: 100px 100px 50px 50px;
         min-height: calc(100svh - 190px);
         max-height: calc(100svh - 190px);
     }
@@ -417,6 +416,7 @@ a:hover .nav-list span {
     }
 
     .tag {
+        border-radius: 100px 100px 50px 50px;
         max-width: calc(100vw - 115px);
         min-width: calc(100vw - 115px);
     }
