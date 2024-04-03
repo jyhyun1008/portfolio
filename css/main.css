@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100&family=Victor+Mono:ital,wght@1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100&family=Victor+Mono:ital,wght@1,100&family=Raleway:ital,wght@0,100&display=swap');
 
 @font-face {
     font-family: 'GrandifloraOne-Regular';
@@ -47,7 +47,7 @@ body {
     height: 100svh;
     margin: 0;
     background: linear-gradient(var(--lightbg), var(--bg));
-    font-family: 'GrandifloraOne-Regular';
+    font-family: 'Raleway', 'GrandifloraOne-Regular';
     display: flex;
     align-content: center;
     justify-content: center;
