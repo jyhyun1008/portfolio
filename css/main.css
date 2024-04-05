@@ -508,6 +508,16 @@ a {
     text-decoration: none;
 }
 
+pre {
+    background: #ff989922;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+pre code {
+    background: transparent !important;
+}
+
 img {
     border-radius: 30px;
     max-width: 100%;
