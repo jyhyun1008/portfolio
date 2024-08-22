@@ -173,9 +173,9 @@ body {
 
 #wrapper {
     border-radius: 60px;
-    width: calc(100vw - 50px);
+    width: calc(100vw - 40px);
     max-width: 1000px;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 40px);
     max-height: 700px;
     display: flex;
     flex-direction: row;
@@ -186,7 +186,7 @@ body {
     min-width: min(770px, calc(100vw - 280px));
     max-width: min(770px, calc(100vw - 280px));
     height: min(600px, calc(100svh - 150px));
-    padding: 50px 20px 50px 50px;
+    padding: 40px 20px 40px 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -245,8 +245,8 @@ h1#title {
 
 .tag-flex {
     display: flex;
-    overflow-x: auto;
-    gap: 12px;
+    overflow-x: hidden;
+    gap: 20px;
     align-items: flex-start;
 }
 
@@ -386,8 +386,8 @@ a:hover .nav-list span {
     }
 
     #content-box {
-        min-width: calc(100vw - 50px);
-        max-width: calc(100vw - 50px);
+        min-width: calc(100vw - 40px);
+        max-width: calc(100vw - 40px);
         padding: 10px 10px 0 10px;
         height: calc(100svh - 110px);
     }
@@ -431,8 +431,8 @@ a:hover .nav-list span {
     }
 
     #nav-box {
-        min-width: calc(100vw - 50px);
-        max-width: calc(100vw - 50px);
+        min-width: calc(100vw - 40px);
+        max-width: calc(100vw - 40px);
         padding: 10px;
         max-height: 100px;
         flex-direction: row;

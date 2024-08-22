@@ -129,7 +129,6 @@ var article = qs.a
 if (!page) {
     page = 0
 }
-
 addEventListener("DOMContentLoaded", (event) => {
 
 if (!article) {
@@ -159,6 +158,17 @@ if (!article) {
                 document.querySelector(".tag."+tag).innerHTML += "<div class='pgroup "+tag+"'>"+element.innerHTML+"</div>"
             });
             document.querySelector('.pflex').style="display:none;"
+
+            document.querySelector('.tag-flex').addEventListener('click', (e) => {
+                var current = document.querySelector('.tag-flex').scrollLeft
+                var columnCount = document.getElementsByClassName('tag').length
+                if (current > (columnCount - 3) * 370) {
+                    document.querySelector('.tag-flex').scrollTo({left: 0, behavior: 'smooth'})
+                } else {
+                    document.querySelector('.tag-flex').scrollTo({left: current + 370, behavior: 'smooth'})
+                }
+            })
+
         })
     } else {
         document.querySelector("#page-content").innerHTML += "<div class='postContent'></div>"
