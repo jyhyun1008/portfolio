@@ -48,7 +48,6 @@ body {
     margin: 0;
     background: linear-gradient(var(--lightbg), var(--bg));
     font-family: 'Raleway', 'GrandifloraOne-Regular';
-    text-shadow: -0.2px 0px, 0px 0.2px, 0.2px 0px, 0px -0.2px;
     display: flex;
     align-content: center;
     justify-content: center;
