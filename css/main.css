@@ -17,7 +17,7 @@
 :root {
     --accent: #ff9899;
     --bg: #222238;
-    --grey: #ddd;
+    --grey: #f0f0f0;
     --lightbg: color-mix(in srgb, var(--bg) 60%, grey);
     --darkaccent: color-mix(in srgb, var(--accent) 70%, #b50051);
     --lightaccent: color-mix(in srgb, var(--accent) 60%, #fbffbb);
@@ -48,6 +48,7 @@ body {
     margin: 0;
     background: linear-gradient(var(--lightbg), var(--bg));
     font-family: 'Raleway', 'GrandifloraOne-Regular';
+    text-shadow: -0.2px 0px, 0px 0.2px, 0.2px 0px, 0px -0.2px;
     display: flex;
     align-content: center;
     justify-content: center;
@@ -153,7 +154,9 @@ body {
     animation-duration: 11s;
 }
 
-
+.postContent img {
+    max-height: 400px;
+}
 
 @keyframes animate {
 
