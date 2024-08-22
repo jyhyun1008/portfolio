@@ -172,7 +172,7 @@ if (!article) {
         })
     } else {
         document.querySelector("#page-content").innerHTML += "<div class='postContent'></div>"
-        var url = "https://i.peacht.art/devlog?url="
+        var url = "https://proxy.rongo.moe/?url=https://blog.daydream.ink/jyhyun1008/"
         fetch(url)
         .then(res => res.text())
         .then((out) => {
@@ -184,7 +184,7 @@ if (!article) {
     document.querySelector("#nav4").style = 'background: white;'
 
     document.querySelector("#page-content").innerHTML += "<div class='postContent'></div>"
-    var url = "https://i.peacht.art/devlog?url="+article.split('wf/')[1]
+    var url = "https://proxy.rongo.moe/?url=https://blog.daydream.ink/jyhyun1008/"+article.split('wf/')[1]
     fetch(url)
     .then(res => res.text())
     .then((out) => {
