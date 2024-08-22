@@ -150,7 +150,7 @@ if (!article) {
         .then(res => res.text())
         .then((out) => {
             document.querySelector("#page-content").innerHTML += parseMd(out)
-            document.querySelector("#page-content").innerHTML += "<div class='tag-flex'><div class='tag social'><h1>오픈소스 SNS</h1></div><div class='tag ai'><h1>딥러닝</h1></div><div class='tag game'><h1>게임</h1></div><div class='tag blogging'><h1>특수목적 블로깅</h1></div><div class='tag template'><h1>CSS 템플릿</h1></div><div class='tag others'><h1>기타</h1></div><div>"
+            document.querySelector("#page-content").innerHTML += "<h1>Github 배포 코드 목록</h1><div>클릭해서 오른쪽으로 스크롤해보세요!</div><div class='tag-flex'><div class='tag social'><h1>오픈소스 SNS</h1></div><div class='tag ai'><h1>딥러닝</h1></div><div class='tag game'><h1>게임</h1></div><div class='tag blogging'><h1>특수목적 블로깅</h1></div><div class='tag template'><h1>CSS 템플릿</h1></div><div class='tag others'><h1>기타</h1></div><div>"
 
             var projects = Array.from(document.getElementsByClassName("pgroup"))
             projects.forEach(element => {
